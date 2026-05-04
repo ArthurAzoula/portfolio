@@ -18,7 +18,7 @@ spec:
         - name: ghcr-auth
       containers:
         - name: portfolio
-          image: ghcr.io/arthurazoula/azoulux-portfolio:latest
+          image: ghcr.io/arthurazoula/portfolio:latest
           ports:
             - containerPort: 80
           resources:
