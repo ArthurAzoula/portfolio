@@ -39,57 +39,62 @@ const currentPath = Astro.url.pathname;
       <span class="w-[1rem] h-[0.125rem] bg-brown transition-all duration-300 origin-center" id="burger-3"></span>
     </button>
   </nav>
-
-  <div id="mobile-menu" class="md:hidden hidden fixed inset-0 top-[4.5rem] bg-cream/95 backdrop-blur-md z-40">
-    <div class="flex flex-col items-center justify-center gap-[2rem] h-full text-[1.5rem] font-medium">
-      <a href="#expertise" class="mobile-link hover:text-lime transition-colors">{t.nav.expertise}</a>
-      <a href="#projects" class="mobile-link hover:text-lime transition-colors">{t.nav.projects}</a>
-      <a href="#about" class="mobile-link hover:text-lime transition-colors">{t.nav.experience}</a>
-      <a href="#contact" class="mobile-link hover:text-lime transition-colors">{t.nav.contact}</a>
-      <a
-        href={getLocalizedPath(currentPath, otherLocale)}
-        class="mt-[1rem] px-[1.25rem] py-[0.5rem] text-[1rem] font-semibold uppercase rounded-full border-[0.125rem] border-brown/20 hover:border-lime hover:text-lime transition-all"
-      >
-        {otherLocale.toUpperCase()}
-      </a>
-    </div>
-  </div>
 </header>
+
+<div id="mobile-menu" aria-hidden="true" class="fixed inset-0 top-[4rem] bg-cream/97 z-[49] flex-col items-center justify-center gap-[2rem] text-[1.5rem] font-medium" style="display:none;">
+  <a href="#expertise" class="mobile-link hover:text-lime transition-colors">{t.nav.expertise}</a>
+  <a href="#projects" class="mobile-link hover:text-lime transition-colors">{t.nav.projects}</a>
+  <a href="#about" class="mobile-link hover:text-lime transition-colors">{t.nav.experience}</a>
+  <a href="#contact" class="mobile-link hover:text-lime transition-colors">{t.nav.contact}</a>
+  <a
+    href={getLocalizedPath(currentPath, otherLocale)}
+    class="mt-[1rem] px-[1.25rem] py-[0.5rem] text-[1rem] font-semibold uppercase rounded-full border-[0.125rem] border-brown/20 hover:border-lime hover:text-lime transition-all"
+  >
+    {otherLocale.toUpperCase()}
+  </a>
+</div>
 
 <script>
   const toggle = document.getElementById('mobile-toggle');
-  const menu = document.getElementById('mobile-menu');
+  const menu = document.getElementById('mobile-menu') as HTMLElement | null;
   const burger1 = document.getElementById('burger-1') as HTMLElement;
   const burger2 = document.getElementById('burger-2') as HTMLElement;
   const burger3 = document.getElementById('burger-3') as HTMLElement;
   const header = document.getElementById('site-header');
   let isOpen = false;
 
-  toggle?.addEventListener('click', () => {
-    isOpen = !isOpen;
-    menu?.classList.toggle('hidden');
-    if (isOpen) {
-      burger1.style.transform = 'rotate(45deg) translateY(0.25rem)';
-      burger2.style.opacity = '0';
-      burger3.style.transform = 'rotate(-45deg) translateY(-0.25rem)';
-      burger3.style.width = '1.5rem';
-    } else {
-      burger1.style.transform = '';
-      burger2.style.opacity = '1';
-      burger3.style.transform = '';
-      burger3.style.width = '1rem';
+  function openMenu(): void {
+    isOpen = true;
+    if (menu) {
+      menu.style.display = 'flex';
+      menu.setAttribute('aria-hidden', 'false');
     }
+    burger1.style.transform = 'rotate(45deg) translateY(0.375rem)';
+    burger2.style.opacity = '0';
+    burger3.style.transform = 'rotate(-45deg) translateY(-0.375rem)';
+    burger3.style.width = '1.5rem';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu(): void {
+    isOpen = false;
+    if (menu) {
+      menu.style.display = 'none';
+      menu.setAttribute('aria-hidden', 'true');
+    }
+    burger1.style.transform = '';
+    burger2.style.opacity = '1';
+    burger3.style.transform = '';
+    burger3.style.width = '1rem';
+    document.body.style.overflow = '';
+  }
+
+  toggle?.addEventListener('click', () => {
+    isOpen ? closeMenu() : openMenu();
   });
 
   document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      menu?.classList.add('hidden');
-      isOpen = false;
-      burger1.style.transform = '';
-      burger2.style.opacity = '1';
-      burger3.style.transform = '';
-      burger3.style.width = '1rem';
-    });
+    link.addEventListener('click', closeMenu);
   });
 
   window.addEventListener('scroll', () => {
