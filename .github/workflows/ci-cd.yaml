@@ -62,7 +62,7 @@ jobs:
   deploy:
     name: Deploy to K8s
     needs: docker
-    runs-on: [self-hosted, home-server]
+    runs-on: self-hosted
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
       - uses: actions/checkout@v4
