@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="CryptoViz visual">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#613A3A" stop-opacity=".55"/>
+      <stop offset=".6" stop-color="#D7B29D" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#98CE00" stop-opacity=".55"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="620" rx="72" fill="url(#bg)"/>
+  <g fill="none" stroke="#FAF8F5" stroke-width="12" stroke-linecap="round" opacity=".75">
+    <path d="M120 430 L250 330 L380 370 L510 210 L650 255 L780 145"/>
+    <path d="M120 505 L780 505"/>
+    <path d="M120 145 L120 505"/>
+  </g>
+  <g fill="#98CE00">
+    <circle cx="250" cy="330" r="26"/>
+    <circle cx="510" cy="210" r="26"/>
+    <circle cx="780" cy="145" r="26"/>
+  </g>
+  <rect x="560" y="375" width="210" height="64" rx="32" fill="#FAF8F5" opacity=".75"/>
+  <rect x="590" y="399" width="110" height="16" rx="8" fill="#613A3A" opacity=".5"/>
+</svg>

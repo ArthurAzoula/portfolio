@@ -1,0 +1,181 @@
+{
+  "nav": {
+    "about": "About",
+    "expertise": "Expertise",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Backend Developer",
+    "at": "at",
+    "subtitle": "Backend, Kafka, applied AI and clean delivery. I turn complex topics into readable systems.",
+    "cta": "View my work",
+    "availability": "Open to conversations",
+    "location": "Lille, France",
+    "proof": ["Adeo / Leroy Merlin", "Java & Spring Boot", "Kafka", "Docker / Kubernetes"]
+  },
+  "marquee": {
+    "label": "Tech stack"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A few projects selected to show how I think and ship.",
+    "viewCode": "View code",
+    "items": [
+      {
+        "id": "travel-order",
+        "title": "Travel Order Resolver",
+        "description": "Voice command turned into a usable business intent.",
+        "tags": ["Java 21", "Spring Boot", "AI", "Hexagonal"],
+        "link": "https://github.com/ArthurAzoula/travel-order-resolver"
+      },
+      {
+        "id": "cryptoviz",
+        "title": "CryptoViz",
+        "description": "Real-time ingestion, NLP and event-driven dashboard.",
+        "tags": ["Java", "Kafka", "React", "NLP"],
+        "link": "https://github.com/ArthurAzoula/crypto-news-analysis"
+      },
+      {
+        "id": "trinity-api",
+        "title": "Trinity API",
+        "description": "Typed, tested and documented REST API.",
+        "tags": ["Node.js", "TypeScript", "PostgreSQL", "CI/CD"],
+        "link": "https://github.com/ArthurAzoula/trinity-api"
+      },
+      {
+        "id": "trinity-scanner",
+        "title": "Trinity Scanner Mobile",
+        "description": "Product scan, cart and mobile payment flow.",
+        "tags": ["React Native", "TypeScript", "UX", "Payments"],
+        "link": "https://github.com/ArthurAzoula/trinity-scanner-mobile"
+      }
+    ]
+  },
+  "expertise": {
+    "title": "What I build",
+    "subtitle": "The areas where I am strongest today.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Business backend",
+        "description": "APIs, algorithms and maintainable architecture.",
+        "tags": ["Java", "Spring Boot", "DDD"]
+      },
+      {
+        "number": "02",
+        "title": "Event-driven systems",
+        "description": "Kafka, async flows and robust integrations.",
+        "tags": ["Kafka", "Events", "Scalability"]
+      },
+      {
+        "number": "03",
+        "title": "Product interfaces",
+        "description": "Focused React/Vue interfaces for readable products.",
+        "tags": ["React", "Vue", "UX"]
+      },
+      {
+        "number": "04",
+        "title": "Production delivery",
+        "description": "Docker, Kubernetes and CI/CD without friction.",
+        "tags": ["Docker", "K8s", "CI/CD"]
+      }
+    ]
+  },
+  "about": {
+    "title": "About",
+    "description": "Backend developer at Adeo, working around OMS, Kafka and optimization topics.",
+    "description2": "Also exploring Spring AI and agentic architectures.",
+    "interests": ""
+  },
+  "experience": {
+    "title": "Experience",
+    "items": [
+      {
+        "period": "Sep. 2024 — Present",
+        "title": "Backend Developer",
+        "company": "Adeo (Leroy Merlin)",
+        "location": "Ronchin",
+        "description": "ATP team, Order Management System. Code optimization, algorithm redesign, large-scale Kafka pipeline integration. Exploring Spring AI and agentic AI."
+      },
+      {
+        "period": "Jan. 2024 — Sep. 2024",
+        "title": "Full Stack Developer",
+        "company": "Faceel-it",
+        "location": "Wasquehal",
+        "description": "SaaS platform for mentorship, training and client tracking. Developed mission tracking features and company intranet."
+      },
+      {
+        "period": "Apr. 2023 — Aug. 2023",
+        "title": "Full Stack Developer",
+        "company": "RadioKing",
+        "location": "Croix",
+        "description": "Designed and maintained full-stack PHP applications. Improved code quality and technical documentation."
+      },
+      {
+        "period": "Mar. 2022 — May 2022",
+        "title": "Full Stack Developer",
+        "company": "CPAM du Val-de-Marne",
+        "location": "Créteil",
+        "description": "Built a business application for data integration, creating a regionalized employer data map."
+      }
+    ],
+    "education": [
+      {
+        "period": "2023 — 2026",
+        "title": "Master's in Computer Science",
+        "school": "Epitech"
+      },
+      {
+        "period": "2022 — 2023",
+        "title": "Bachelor's in Computer Science",
+        "school": "Université de Lille"
+      },
+      {
+        "period": "2020 — 2022",
+        "title": "Associate Degree in Computer Science",
+        "school": "IUT Reims-Châlons-Charleville"
+      }
+    ]
+  },
+  "lifestyle": {
+    "title": "Beyond the code",
+    "subtitle": "A glimpse of who I am when the laptop is closed.",
+    "items": [
+      {
+        "emoji": "🎾",
+        "title": "Tennis",
+        "description": "Competition, training, mindset and the joy of the game. My balance outside of code.",
+        "tenup": "https://tenup.fft.fr/fichejoueur/2495211127",
+        "tenupLabel": "View my player profile"
+      },
+      {
+        "emoji": "✈️",
+        "title": "Travel",
+        "description": "Exploring new cultures, tasting local street food, getting lost in unknown alleys."
+      },
+      {
+        "emoji": "🐕",
+        "title": "My dog",
+        "description": "My best remote work buddy. He approves (or not) my pull requests."
+      },
+      {
+        "emoji": "🖥️",
+        "title": "My setup",
+        "description": "A gaming & dev setup: dual monitors, good coffee, chill vibes to code and play."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Got a project, an opportunity, or just want to chat?",
+    "cta": "Get in touch",
+    "email": "arthur2504azoula@gmail.com"
+  },
+  "footer": {
+    "made": "Built with",
+    "by": "by Arthur Azoula"
+  }
+}

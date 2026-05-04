@@ -1,0 +1,181 @@
+{
+  "nav": {
+    "about": "À propos",
+    "expertise": "Expertise",
+    "projects": "Projets",
+    "experience": "Parcours",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Salut, moi c'est",
+    "role": "Développeur Backend",
+    "at": "chez",
+    "subtitle": "Backend, Kafka, IA appliquée et déploiement propre. Je transforme des sujets complexes en systèmes lisibles.",
+    "cta": "Voir mon travail",
+    "availability": "Disponible pour échanger",
+    "location": "Lille, France",
+    "proof": ["Adeo / Leroy Merlin", "Java & Spring Boot", "Kafka", "Docker / Kubernetes"]
+  },
+  "marquee": {
+    "label": "Stack technique"
+  },
+  "projects": {
+    "title": "Projets",
+    "subtitle": "Quelques projets qui montrent le mieux ma manière de construire.",
+    "viewCode": "Voir le code",
+    "items": [
+      {
+        "id": "travel-order",
+        "title": "Travel Order Resolver",
+        "description": "Commande vocale transformée en intention métier.",
+        "tags": ["Java 21", "Spring Boot", "IA", "Hexagonal"],
+        "link": "https://github.com/ArthurAzoula/travel-order-resolver"
+      },
+      {
+        "id": "cryptoviz",
+        "title": "CryptoViz",
+        "description": "Ingestion temps réel, NLP et dashboard événementiel.",
+        "tags": ["Java", "Kafka", "React", "NLP"],
+        "link": "https://github.com/ArthurAzoula/crypto-news-analysis"
+      },
+      {
+        "id": "trinity-api",
+        "title": "Trinity API",
+        "description": "API REST typée, testée et documentée.",
+        "tags": ["Node.js", "TypeScript", "PostgreSQL", "CI/CD"],
+        "link": "https://github.com/ArthurAzoula/trinity-api"
+      },
+      {
+        "id": "trinity-scanner",
+        "title": "Trinity Scanner Mobile",
+        "description": "Scan produit, panier et paiement mobile.",
+        "tags": ["React Native", "TypeScript", "UX", "Payments"],
+        "link": "https://github.com/ArthurAzoula/trinity-scanner-mobile"
+      }
+    ]
+  },
+  "expertise": {
+    "title": "Ce que je construis",
+    "subtitle": "Les sujets sur lesquels je suis le plus crédible aujourd'hui.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Backend métier",
+        "description": "APIs, algorithmes et architecture maintenable.",
+        "tags": ["Java", "Spring Boot", "DDD"]
+      },
+      {
+        "number": "02",
+        "title": "Systèmes événementiels",
+        "description": "Kafka, asynchrone et intégrations robustes.",
+        "tags": ["Kafka", "Events", "Scalabilité"]
+      },
+      {
+        "number": "03",
+        "title": "Interfaces produit",
+        "description": "React/Vue sobres pour rendre le métier lisible.",
+        "tags": ["React", "Vue", "UX"]
+      },
+      {
+        "number": "04",
+        "title": "Livraison production",
+        "description": "Docker, Kubernetes et CI/CD sans friction.",
+        "tags": ["Docker", "K8s", "CI/CD"]
+      }
+    ]
+  },
+  "about": {
+    "title": "À propos",
+    "description": "Développeur backend chez Adeo, au coeur de sujets OMS, Kafka et optimisation.",
+    "description2": "Je creuse aussi Spring AI et les architectures agentiques.",
+    "interests": ""
+  },
+  "experience": {
+    "title": "Parcours",
+    "items": [
+      {
+        "period": "Sept. 2024 — Présent",
+        "title": "Développeur Backend",
+        "company": "Adeo (Leroy Merlin)",
+        "location": "Ronchin",
+        "description": "Équipe ATP, Order Management System. Optimisation de code, redesign d'algorithmes, intégration de pipelines Kafka à grande échelle. Exploration de Spring AI et IA agentique."
+      },
+      {
+        "period": "Janv. 2024 — Sept. 2024",
+        "title": "Développeur Full Stack",
+        "company": "Faceel-it",
+        "location": "Wasquehal",
+        "description": "Plateforme SaaS de mentorat, formation et suivi client. Développement de fonctionnalités de tracking de missions et intranet d'entreprise."
+      },
+      {
+        "period": "Avr. 2023 — Août 2023",
+        "title": "Développeur Full Stack",
+        "company": "RadioKing",
+        "location": "Croix",
+        "description": "Conception et maintenance d'applications PHP full-stack. Amélioration de la qualité du code et documentation technique."
+      },
+      {
+        "period": "Mars 2022 — Mai 2022",
+        "title": "Développeur Full Stack",
+        "company": "CPAM du Val-de-Marne",
+        "location": "Créteil",
+        "description": "Développement d'une application métier d'intégration de données pour créer une cartographie régionalisée des employeurs."
+      }
+    ],
+    "education": [
+      {
+        "period": "2023 — 2026",
+        "title": "Master Informatique",
+        "school": "Epitech"
+      },
+      {
+        "period": "2022 — 2023",
+        "title": "Licence 3 Informatique",
+        "school": "Université de Lille"
+      },
+      {
+        "period": "2020 — 2022",
+        "title": "DUT Informatique",
+        "school": "IUT Reims-Châlons-Charleville"
+      }
+    ]
+  },
+  "lifestyle": {
+    "title": "En dehors du code",
+    "subtitle": "Un petit aperçu de qui je suis quand je ferme le laptop.",
+    "items": [
+      {
+        "emoji": "🎾",
+        "title": "Tennis",
+        "description": "Compétition, entraînement, mental et plaisir du jeu. Mon sport d'équilibre en dehors du code.",
+        "tenup": "https://tenup.fft.fr/fichejoueur/2495211127",
+        "tenupLabel": "Voir ma fiche joueur"
+      },
+      {
+        "emoji": "✈️",
+        "title": "Voyages",
+        "description": "Explorer de nouvelles cultures, goûter la street food locale, me perdre dans des ruelles inconnues."
+      },
+      {
+        "emoji": "🐕",
+        "title": "Mon chien",
+        "description": "Mon meilleur coéquipier de télétravail. Il approuve (ou pas) mes pull requests."
+      },
+      {
+        "emoji": "🖥️",
+        "title": "Mon setup",
+        "description": "Un setup gaming & dev : double écran, bon café, ambiance zen pour coder et jouer."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Un projet, une opportunité, ou juste envie d'échanger ?",
+    "cta": "Me contacter",
+    "email": "arthur2504azoula@gmail.com"
+  },
+  "footer": {
+    "made": "Conçu avec",
+    "by": "par Arthur Azoula"
+  }
+}

@@ -1,0 +1,81 @@
+---
+import type { ProjectsTranslations, ProjectItem } from '../i18n/types';
+
+interface Props {
+  t: { projects: ProjectsTranslations };
+}
+
+const { t } = Astro.props;
+const projects: ProjectItem[] = t.projects.items;
+const visuals: Record<string, string> = {
+  'travel-order': '/projects/travel-order.svg',
+  cryptoviz: '/projects/cryptoviz.svg',
+  'trinity-api': '/projects/trinity-api.svg',
+  'trinity-scanner': '/projects/trinity-scanner.svg',
+};
+---
+
+<section id="projects" class="snap-section-auto py-[6rem] md:py-[8rem]">
+  <div class="max-w-[75rem] mx-auto px-[1.5rem] relative z-[1]">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-[3rem] mb-[4rem] md:mb-[5rem]" data-animate>
+      <div class="lg:col-span-5">
+        <p class="section-kicker">/ {t.projects.title}</p>
+        <h2 class="section-title">
+          {t.projects.title}<span class="text-lime">.</span>
+        </h2>
+      </div>
+      <p class="lg:col-span-5 lg:col-start-8 text-[1.125rem] md:text-[1.35rem] leading-relaxed text-brown-light self-end">
+        {t.projects.subtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-[1rem]">
+      {projects.map((project: ProjectItem, index: number) => (
+        <article
+          class={`project-card group smooth-reveal ${index === 0 ? 'lg:col-span-2' : ''}`}
+        >
+          <img
+            src={visuals[project.id]}
+            alt=""
+            class="project-visual"
+            loading="lazy"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <div class="flex items-start justify-between gap-[1rem] mb-[3rem]">
+            <span class="project-index">{String(index + 1).padStart(2, '0')}</span>
+            <span class="project-letter">{project.title.charAt(0)}</span>
+          </div>
+
+          <h3 class="text-[1.75rem] md:text-[2.75rem] font-black tracking-tight mb-[1rem] group-hover:text-lime transition-colors duration-500">
+            {project.title}
+          </h3>
+          <p class="text-brown-light leading-relaxed mb-[1.5rem] text-[1rem] md:text-[1.125rem] max-w-[36rem]">
+            {project.description}
+          </p>
+
+          <div class="flex flex-wrap gap-[0.5rem] mb-[1.5rem]">
+            {project.tags.map((tag: string) => (
+              <span class="skill-pill">{tag}</span>
+            ))}
+          </div>
+
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-[0.5rem] text-[0.875rem] font-black uppercase tracking-[0.12em] text-lime-dark hover:text-lime transition-colors group/link"
+          >
+            <span>{t.projects.viewCode}</span>
+            <svg class="w-[1rem] h-[1rem] transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+
+          <div class="project-glow" aria-hidden="true"></div>
+          <div class="project-line" aria-hidden="true"></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

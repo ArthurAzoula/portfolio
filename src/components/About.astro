@@ -1,0 +1,84 @@
+---
+import type { AboutTranslations, ExperienceTranslations, ExperienceItem, EducationItem } from '../i18n/types';
+
+interface Props {
+  t: { about: AboutTranslations; experience: ExperienceTranslations };
+}
+
+const { t } = Astro.props;
+---
+
+<section id="about" class="snap-section-auto py-[6rem] md:py-[8rem] bg-sand/10">
+  <div class="max-w-[75rem] mx-auto px-[1.5rem] relative z-[1]">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-[3rem] lg:gap-[5rem]">
+      <div class="lg:col-span-5 lg:sticky lg:top-[7rem] self-start" data-animate>
+        <p class="section-kicker">/ {t.about.title}</p>
+        <h2 class="section-title mb-[2rem]">
+          {t.about.title}<span class="text-lime">.</span>
+        </h2>
+        <div class="about-portrait">
+          <img
+            src="/avatar.jpg"
+            srcset="/avatar-600.jpg 600w, /avatar.jpg 1200w"
+            sizes="(max-width: 64rem) 100vw, 32rem"
+            alt="Arthur Azoula"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="mt-[1.5rem] grid grid-cols-2 gap-[0.75rem]">
+          <div class="mini-proof">
+            <span>Now</span>
+            <strong>Adeo</strong>
+          </div>
+          <div class="mini-proof">
+            <span>Focus</span>
+            <strong>Backend & IA</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="profile-statement" data-animate>
+          <p>{t.about.description}</p>
+          <p>{t.about.description2}</p>
+        </div>
+
+        <div class="mt-[4rem]" data-animate>
+          <h3 class="text-[1rem] font-black uppercase tracking-[0.16em] text-brown mb-[1.5rem]">
+            {t.experience.title}
+          </h3>
+          <div class="timeline-list">
+            {t.experience.items.map((item: ExperienceItem) => (
+              <article class="timeline-row">
+                <span class="timeline-period">{item.period}</span>
+                <div>
+                  <h4>{item.title}</h4>
+                  <p>{item.company} · {item.location}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-[3rem]" data-animate>
+          <h3 class="text-[1rem] font-black uppercase tracking-[0.16em] text-brown mb-[1.5rem]">
+            Formation
+          </h3>
+          <div class="timeline-list timeline-list--compact">
+            {t.experience.education.map((item: EducationItem) => (
+              <article class="timeline-row">
+                <span class="timeline-period">{item.period}</span>
+                <div>
+                  <h4>{item.title}</h4>
+                  <p>{item.school}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

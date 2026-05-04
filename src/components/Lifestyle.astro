@@ -1,0 +1,61 @@
+---
+import type { LifestyleTranslations, LifestyleItem } from '../i18n/types';
+
+interface Props {
+  t: { lifestyle: LifestyleTranslations };
+}
+const { t } = Astro.props;
+
+const photos: string[] = [
+  '/lifestyle/tennis.jpg',
+  '/lifestyle/travel.jpg',
+  '/lifestyle/dog.jpg',
+  '/lifestyle/setup.jpg',
+];
+---
+
+<section class="snap-section-auto py-[6rem] md:py-[8rem]">
+  <div class="max-w-[75rem] mx-auto px-[1.5rem]">
+    <div class="mb-[4rem] md:mb-[5rem] text-center" data-animate>
+      <p class="text-lime font-bold text-[0.75rem] uppercase tracking-widest mb-[0.75rem]">/ {t.lifestyle.title}</p>
+      <h2 class="text-[2.5rem] md:text-[3.75rem] font-black tracking-tight">
+        {t.lifestyle.title}<span class="text-lime">.</span>
+      </h2>
+      <p class="text-brown-light text-[1.125rem] mt-[1rem] max-w-[28rem] mx-auto">
+        {t.lifestyle.subtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[1.5rem] max-w-[60rem] mx-auto">
+      {t.lifestyle.items.map((item: LifestyleItem, index: number) => (
+        <div class={`lifestyle-card smooth-reveal stagger-${index + 1} ${index === 0 ? 'lifestyle-card--tennis md:row-span-2 min-h-[28rem]' : 'min-h-[13rem]'}`}>
+          <img
+            src={photos[index]}
+            alt={item.title}
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
+            sizes="(max-width: 48rem) 100vw, 30rem"
+            onerror="this.style.display='none'"
+          />
+          <div class={`absolute inset-0 ${index === 0 ? 'bg-lime/10' : index === 1 ? 'bg-sand/20' : index === 2 ? 'bg-brown/10' : 'bg-lime-dark/10'}`}></div>
+
+          {item.tenup && (
+            <div class="tennis-profile">
+              <a href={item.tenup} target="_blank" rel="noopener noreferrer">
+                Ten'Up · FFT
+              </a>
+            </div>
+          )}
+
+          <div class="lifestyle-card-content">
+            <span class="text-[1.5rem] mb-[0.5rem] block">{item.emoji}</span>
+            <h3 class="text-[1.25rem] font-bold mb-[0.25rem]">{item.title}</h3>
+            <p class="text-[0.875rem] opacity-90 leading-relaxed">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

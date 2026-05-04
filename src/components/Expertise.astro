@@ -1,0 +1,51 @@
+---
+import type { ExpertiseItem, ExpertiseTranslations } from '../i18n/types';
+
+interface Props {
+  t: { expertise: ExpertiseTranslations };
+}
+
+const { t } = Astro.props;
+---
+
+<section id="expertise" class="snap-section-auto py-[6rem] md:py-[8rem] relative">
+  <div class="max-w-[75rem] mx-auto px-[1.5rem] relative z-[1]">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-[3rem] lg:gap-[5rem] mb-[4rem] md:mb-[5rem]">
+      <div class="lg:col-span-5" data-animate>
+        <p class="section-kicker">/ {t.expertise.title}</p>
+        <h2 class="section-title">
+          {t.expertise.title}<span class="text-lime">.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:col-start-8 flex items-end" data-animate>
+        <p class="text-[1.125rem] md:text-[1.35rem] leading-relaxed text-brown-light">
+          {t.expertise.subtitle}
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[1rem]">
+      {t.expertise.items.map((item: ExpertiseItem) => (
+        <article class="expertise-card smooth-reveal">
+          <div class="flex items-start justify-between gap-[1.5rem] mb-[2rem]">
+            <span class="text-[0.875rem] font-bold text-lime-dark">{item.number}</span>
+            <div class="w-[2.75rem] h-[2.75rem] rounded-full bg-lime/10 border border-lime/20 flex items-center justify-center">
+              <span class="w-[0.5rem] h-[0.5rem] rounded-full bg-lime"></span>
+            </div>
+          </div>
+          <h3 class="text-[1.75rem] md:text-[2rem] font-black tracking-tight mb-[1rem]">
+            {item.title}
+          </h3>
+          <p class="text-[1rem] leading-relaxed text-brown-light mb-[1.5rem] max-w-[28rem]">
+            {item.description}
+          </p>
+          <div class="flex flex-wrap gap-[0.5rem]">
+            {item.tags.map((tag: string) => (
+              <span class="skill-pill">{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

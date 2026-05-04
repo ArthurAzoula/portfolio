@@ -1,0 +1,102 @@
+---
+import type { Locale } from '../i18n';
+import type { Translations } from '../i18n/types';
+import { getLocalizedPath } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  t: Translations;
+}
+
+const { locale, t } = Astro.props;
+const otherLocale: Locale = locale === 'fr' ? 'en' : 'fr';
+const currentPath = Astro.url.pathname;
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <nav class="max-w-[75rem] mx-auto px-[1.5rem] py-[1.25rem] flex items-center justify-between">
+    <a href={locale === 'fr' ? '/' : '/en/'} class="text-[1.125rem] font-bold tracking-tight text-brown hover:text-lime-dark transition-colors">
+      A<span class="text-lime">.</span>A
+    </a>
+
+    <div class="hidden md:flex items-center gap-[2rem]">
+      <a href="#expertise" class="link-underline text-[0.875rem] font-medium text-brown-light hover:text-brown transition-colors">{t.nav.expertise}</a>
+      <a href="#projects" class="link-underline text-[0.875rem] font-medium text-brown-light hover:text-brown transition-colors">{t.nav.projects}</a>
+      <a href="#about" class="link-underline text-[0.875rem] font-medium text-brown-light hover:text-brown transition-colors">{t.nav.experience}</a>
+      <a href="#contact" class="link-underline text-[0.875rem] font-medium text-brown-light hover:text-brown transition-colors">{t.nav.contact}</a>
+
+      <a
+        href={getLocalizedPath(currentPath, otherLocale)}
+        class="ml-[1rem] px-[0.75rem] py-[0.25rem] text-[0.75rem] font-semibold uppercase rounded-full border-[0.125rem] border-brown/20 hover:border-lime hover:text-lime transition-all duration-200"
+      >
+        {otherLocale.toUpperCase()}
+      </a>
+    </div>
+
+    <button id="mobile-toggle" class="md:hidden flex flex-col gap-[0.375rem] p-[0.5rem]" aria-label="Menu">
+      <span class="w-[1.5rem] h-[0.125rem] bg-brown transition-all duration-300 origin-center" id="burger-1"></span>
+      <span class="w-[1.5rem] h-[0.125rem] bg-brown transition-all duration-300" id="burger-2"></span>
+      <span class="w-[1rem] h-[0.125rem] bg-brown transition-all duration-300 origin-center" id="burger-3"></span>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="md:hidden hidden fixed inset-0 top-[4.5rem] bg-cream/95 backdrop-blur-md z-40">
+    <div class="flex flex-col items-center justify-center gap-[2rem] h-full text-[1.5rem] font-medium">
+      <a href="#expertise" class="mobile-link hover:text-lime transition-colors">{t.nav.expertise}</a>
+      <a href="#projects" class="mobile-link hover:text-lime transition-colors">{t.nav.projects}</a>
+      <a href="#about" class="mobile-link hover:text-lime transition-colors">{t.nav.experience}</a>
+      <a href="#contact" class="mobile-link hover:text-lime transition-colors">{t.nav.contact}</a>
+      <a
+        href={getLocalizedPath(currentPath, otherLocale)}
+        class="mt-[1rem] px-[1.25rem] py-[0.5rem] text-[1rem] font-semibold uppercase rounded-full border-[0.125rem] border-brown/20 hover:border-lime hover:text-lime transition-all"
+      >
+        {otherLocale.toUpperCase()}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const burger1 = document.getElementById('burger-1') as HTMLElement;
+  const burger2 = document.getElementById('burger-2') as HTMLElement;
+  const burger3 = document.getElementById('burger-3') as HTMLElement;
+  const header = document.getElementById('site-header');
+  let isOpen = false;
+
+  toggle?.addEventListener('click', () => {
+    isOpen = !isOpen;
+    menu?.classList.toggle('hidden');
+    if (isOpen) {
+      burger1.style.transform = 'rotate(45deg) translateY(0.25rem)';
+      burger2.style.opacity = '0';
+      burger3.style.transform = 'rotate(-45deg) translateY(-0.25rem)';
+      burger3.style.width = '1.5rem';
+    } else {
+      burger1.style.transform = '';
+      burger2.style.opacity = '1';
+      burger3.style.transform = '';
+      burger3.style.width = '1rem';
+    }
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      isOpen = false;
+      burger1.style.transform = '';
+      burger2.style.opacity = '1';
+      burger3.style.transform = '';
+      burger3.style.width = '1rem';
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('bg-cream/90', 'backdrop-blur-md', 'shadow-sm');
+    } else {
+      header?.classList.remove('bg-cream/90', 'backdrop-blur-md', 'shadow-sm');
+    }
+  });
+</script>
