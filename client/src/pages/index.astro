@@ -5,7 +5,6 @@ import Expertise from '../components/Expertise.astro';
 import Projects from '../components/Projects.astro';
 import About from '../components/About.astro';
 import Lifestyle from '../components/Lifestyle.astro';
-import Contact from '../components/Contact.astro';
 import { getTranslations } from '../i18n';
 
 const t = getTranslations('fr');
@@ -17,5 +16,4 @@ const t = getTranslations('fr');
   <Projects t={t} />
   <About t={t} />
   <Lifestyle t={t} locale="fr" />
-  <Contact t={t} />
 </Layout>
