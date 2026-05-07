@@ -23,7 +23,6 @@ const currentPath = Astro.url.pathname;
       <a href="#expertise" class="link-underline text-[0.875rem] font-medium text-brown-light hover:text-brown transition-colors">{t.nav.expertise}</a>
       <a href="#projects" class="link-underline text-[0.875rem] font-medium text-brown-light hover:text-brown transition-colors">{t.nav.projects}</a>
       <a href="#about" class="link-underline text-[0.875rem] font-medium text-brown-light hover:text-brown transition-colors">{t.nav.experience}</a>
-      <a href="#contact" class="link-underline text-[0.875rem] font-medium text-brown-light hover:text-brown transition-colors">{t.nav.contact}</a>
 
       <a
         href={getLocalizedPath(currentPath, otherLocale)}
@@ -45,7 +44,6 @@ const currentPath = Astro.url.pathname;
   <a href="#expertise" class="mobile-link hover:text-lime transition-colors">{t.nav.expertise}</a>
   <a href="#projects" class="mobile-link hover:text-lime transition-colors">{t.nav.projects}</a>
   <a href="#about" class="mobile-link hover:text-lime transition-colors">{t.nav.experience}</a>
-  <a href="#contact" class="mobile-link hover:text-lime transition-colors">{t.nav.contact}</a>
   <a
     href={getLocalizedPath(currentPath, otherLocale)}
     class="mt-[1rem] px-[1.25rem] py-[0.5rem] text-[1rem] font-semibold uppercase rounded-full border-[0.125rem] border-brown/20 hover:border-lime hover:text-lime transition-all"

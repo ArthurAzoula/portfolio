@@ -3,7 +3,6 @@ export interface NavTranslations {
   expertise: string;
   projects: string;
   experience: string;
-  contact: string;
 }
 
 export interface HeroTranslations {
@@ -76,13 +75,6 @@ export interface ExperienceTranslations {
   education: EducationItem[];
 }
 
-export interface ContactTranslations {
-  title: string;
-  subtitle: string;
-  cta: string;
-  email: string;
-}
-
 export interface FooterTranslations {
   made: string;
   by: string;
@@ -118,6 +110,5 @@ export interface Translations {
   about: AboutTranslations;
   experience: ExperienceTranslations;
   lifestyle: LifestyleTranslations;
-  contact: ContactTranslations;
   footer: FooterTranslations;
 }

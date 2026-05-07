@@ -3,8 +3,7 @@
     "about": "About",
     "expertise": "Expertise",
     "projects": "Projects",
-    "experience": "Experience",
-    "contact": "Contact"
+    "experience": "Experience"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -167,12 +166,6 @@
         "description": "Dual monitors, good coffee, chill vibes."
       }
     ]
-  },
-  "contact": {
-    "title": "Contact",
-    "subtitle": "Got a project, an opportunity, or just want to chat?",
-    "cta": "Get in touch",
-    "email": "arthur2504azoula@gmail.com"
   },
   "footer": {
     "made": "Built with",

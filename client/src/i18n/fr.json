@@ -3,8 +3,7 @@
     "about": "À propos",
     "expertise": "Expertise",
     "projects": "Projets",
-    "experience": "Parcours",
-    "contact": "Contact"
+    "experience": "Parcours"
   },
   "hero": {
     "greeting": "Salut, moi c'est",
@@ -167,12 +166,6 @@
         "description": "Double écran, bon café, ambiance zen."
       }
     ]
-  },
-  "contact": {
-    "title": "Contact",
-    "subtitle": "Un projet, une opportunité, ou juste envie d'échanger ?",
-    "cta": "Me contacter",
-    "email": "arthur2504azoula@gmail.com"
   },
   "footer": {
     "made": "Conçu avec",
