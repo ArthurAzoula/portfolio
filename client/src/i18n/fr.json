@@ -142,29 +142,29 @@
   },
   "lifestyle": {
     "title": "En dehors du code",
-    "subtitle": "Un petit aperçu de qui je suis quand je ferme le laptop.",
+    "subtitle": "Ce qui m'anime quand je ferme le laptop.",
+    "sportLabel": "Sport",
+    "otherLabel": "Au quotidien",
+    "tennis": {
+      "title": "Tennis",
+      "subtitle": "Compétition & classement FFT",
+      "tenup": "https://tenup.fft.fr/fichejoueur/2495211127"
+    },
     "items": [
-      {
-        "emoji": "🎾",
-        "title": "Tennis",
-        "description": "Compétition, entraînement, mental et plaisir du jeu. Mon sport d'équilibre en dehors du code.",
-        "tenup": "https://tenup.fft.fr/fichejoueur/2495211127",
-        "tenupLabel": "Voir ma fiche joueur"
-      },
       {
         "emoji": "✈️",
         "title": "Voyages",
-        "description": "Explorer de nouvelles cultures, goûter la street food locale, me perdre dans des ruelles inconnues."
+        "description": "Nouvelles cultures, street food, ruelles inconnues."
       },
       {
         "emoji": "🐕",
         "title": "Mon chien",
-        "description": "Mon meilleur coéquipier de télétravail. Il approuve (ou pas) mes pull requests."
+        "description": "Coéquipier de télétravail officiel."
       },
       {
         "emoji": "🖥️",
         "title": "Mon setup",
-        "description": "Un setup gaming & dev : double écran, bon café, ambiance zen pour coder et jouer."
+        "description": "Double écran, bon café, ambiance zen."
       }
     ]
   },

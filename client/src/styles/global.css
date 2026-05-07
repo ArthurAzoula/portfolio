@@ -227,6 +227,10 @@
   opacity: 1;
 }
 
+.lifestyle-card--small {
+  min-height: 11rem;
+}
+
 .smooth-reveal {
   opacity: 0;
   transform: translateY(1.5rem);
@@ -610,6 +614,9 @@
   background: rgba(255, 255, 255, 0.5);
   border: 0.0625rem solid rgba(97, 58, 58, 0.06);
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .strava-header {
@@ -645,6 +652,7 @@
 .strava-activities {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .strava-activity {

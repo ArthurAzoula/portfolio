@@ -8,16 +8,19 @@ interface Props {
 }
 const { t, locale = 'fr' } = Astro.props;
 
-const photos: string[] = [
-  '/lifestyle/tennis.jpg',
-  '/lifestyle/travel.jpg',
-  '/lifestyle/dog.jpg',
-  '/lifestyle/setup.jpg',
-];
+const lifestylePhotos: Record<string, string> = {
+  'Voyages': '/lifestyle/travel.jpg',
+  'Travel': '/lifestyle/travel.jpg',
+  'Mon chien': '/lifestyle/dog.jpg',
+  'My dog': '/lifestyle/dog.jpg',
+  'Mon setup': '/lifestyle/setup.jpg',
+  'My setup': '/lifestyle/setup.jpg',
+};
 ---
 
 <section id="lifestyle" class="snap-section-auto py-[6rem] md:py-[8rem]">
   <div class="max-w-[75rem] mx-auto px-[1.5rem]">
+    <!-- Section header -->
     <div class="mb-[4rem] md:mb-[5rem] text-center" data-animate>
       <p class="text-lime font-bold text-[0.75rem] uppercase tracking-widest mb-[0.75rem]">/ {t.lifestyle.title}</p>
       <h2 class="text-[2.5rem] md:text-[3.75rem] font-black tracking-tight">
@@ -28,40 +31,66 @@ const photos: string[] = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-[1.5rem] max-w-[60rem] mx-auto">
-      {t.lifestyle.items.map((item: LifestyleItem, index: number) => (
-        <div class={`lifestyle-card smooth-reveal stagger-${index + 1} ${index === 0 ? 'lifestyle-card--tennis md:row-span-2 min-h-[28rem]' : 'min-h-[13rem]'}`}>
+    <!-- Sport section -->
+    <div class="max-w-[60rem] mx-auto mb-[3rem]" data-animate>
+      <p class="text-[0.6875rem] font-black uppercase tracking-[0.14em] text-brown-light mb-[1rem]">
+        {t.lifestyle.sportLabel}
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-[1.5rem]">
+        <!-- Tennis card -->
+        <div class="lifestyle-card lifestyle-card--tennis min-h-[20rem] smooth-reveal stagger-1">
           <img
-            src={photos[index]}
-            alt={item.title}
+            src="/lifestyle/tennis.jpg"
+            alt={t.lifestyle.tennis.title}
             class="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
             decoding="async"
-            sizes="(max-width: 48rem) 100vw, 30rem"
-            onerror="this.style.display='none'"
           />
-          <div class={`absolute inset-0 ${index === 0 ? 'bg-lime/10' : index === 1 ? 'bg-sand/20' : index === 2 ? 'bg-brown/10' : 'bg-lime-dark/10'}`}></div>
-
-          {item.tenup && (
-            <div class="tennis-profile">
-              <a href={item.tenup} target="_blank" rel="noopener noreferrer">
-                Ten'Up · FFT
-              </a>
-            </div>
-          )}
-
+          <div class="absolute inset-0 bg-lime/10"></div>
+          <div class="tennis-profile">
+            <a href={t.lifestyle.tennis.tenup} target="_blank" rel="noopener noreferrer">
+              Ten'Up · FFT
+            </a>
+          </div>
           <div class="lifestyle-card-content">
-            <span class="text-[1.5rem] mb-[0.5rem] block">{item.emoji}</span>
-            <h3 class="text-[1.25rem] font-bold mb-[0.25rem]">{item.title}</h3>
-            <p class="text-[0.875rem] opacity-90 leading-relaxed">{item.description}</p>
+            <span class="text-[1.5rem] mb-[0.25rem] block">🎾</span>
+            <h3 class="text-[1.25rem] font-bold">{t.lifestyle.tennis.title}</h3>
+            <p class="text-[0.8125rem] opacity-80">{t.lifestyle.tennis.subtitle}</p>
           </div>
         </div>
-      ))}
+
+        <!-- Strava widget -->
+        <div class="smooth-reveal stagger-2">
+          <StravaStats locale={locale} client:load />
+        </div>
+      </div>
     </div>
 
-    <!-- Strava — compact banner -->
-    <div class="mt-[2rem] max-w-[60rem] mx-auto" data-animate>
-      <StravaStats locale={locale} client:load />
+    <!-- Other lifestyle items -->
+    <div class="max-w-[60rem] mx-auto" data-animate>
+      <p class="text-[0.6875rem] font-black uppercase tracking-[0.14em] text-brown-light mb-[1rem]">
+        {t.lifestyle.otherLabel}
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-[1rem]">
+        {t.lifestyle.items.map((item: LifestyleItem, index: number) => (
+          <div class={`lifestyle-card lifestyle-card--small smooth-reveal stagger-${index + 3}`}>
+            <img
+              src={lifestylePhotos[item.title] || ''}
+              alt={item.title}
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.display='none'"
+            />
+            <div class="absolute inset-0 bg-brown/20"></div>
+            <div class="lifestyle-card-content">
+              <span class="text-[1.25rem] mb-[0.25rem] block">{item.emoji}</span>
+              <h3 class="text-[1rem] font-bold">{item.title}</h3>
+              <p class="text-[0.75rem] opacity-80">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>

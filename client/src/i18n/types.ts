@@ -92,17 +92,21 @@ export interface LifestyleItem {
   emoji: string;
   title: string;
   description: string;
-  tenup?: string;
-  tenupLabel?: string;
+}
+
+export interface LifestyleTennis {
+  title: string;
+  subtitle: string;
+  tenup: string;
 }
 
 export interface LifestyleTranslations {
   title: string;
   subtitle: string;
+  sportLabel: string;
+  otherLabel: string;
+  tennis: LifestyleTennis;
   items: LifestyleItem[];
-  strava?: {
-    title: string;
-  };
 }
 
 export interface Translations {
