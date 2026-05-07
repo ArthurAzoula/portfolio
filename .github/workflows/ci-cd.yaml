@@ -8,8 +8,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_CLIENT: ghcr.io/${{ github.repository }}-client
-  IMAGE_SERVER: ghcr.io/${{ github.repository }}-server
+  IMAGE_CLIENT: ghcr.io/arthurazoula/portfolio-client
+  IMAGE_SERVER: ghcr.io/arthurazoula/portfolio-server
 
 jobs:
   build:
