@@ -1,16 +1,5 @@
 ---
-import type { FooterTranslations } from '../i18n/types';
-
-interface Props {
-  t: { footer: FooterTranslations };
-}
-const { t } = Astro.props;
 ---
 
-<footer class="py-[2rem] text-center text-[0.875rem] text-brown-light">
-  <p>
-    {t.footer.made}
-    <span class="text-lime mx-[0.25rem]">♥</span>
-    {t.footer.by}
-  </p>
+<footer class="py-[2rem]">
 </footer>
