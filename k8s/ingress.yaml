@@ -15,10 +15,17 @@ spec:
     - host: azoulux.fr
       http:
         paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio-server
+                port:
+                  number: 3001
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: azoulux-portfolio
+                name: portfolio-client
                 port:
                   number: 80

@@ -1,4 +1,4 @@
-name: CI/CD — Lint, Build & Deploy
+name: CI/CD — Build & Deploy
 
 on:
   push:
@@ -8,11 +8,12 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_CLIENT: ghcr.io/${{ github.repository }}-client
+  IMAGE_SERVER: ghcr.io/${{ github.repository }}-server
 
 jobs:
-  lint-build:
-    name: Lint & Build
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,18 +24,17 @@ jobs:
           cache: npm
 
       - run: npm ci --legacy-peer-deps
-      - run: npm run build
+      - run: npm -w client run build
+      - run: npm -w server run build
 
   docker:
-    name: Build & Push Docker Image
-    needs: lint-build
+    name: Build & Push Docker Images
+    needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
-    outputs:
-      image-tag: ${{ steps.meta.outputs.version }}
     steps:
       - uses: actions/checkout@v4
 
@@ -45,9 +45,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: docker/metadata-action@v5
-        id: meta
+        id: meta-client
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.IMAGE_CLIENT }}
           tags: |
             type=sha,prefix=
             type=raw,value=latest
@@ -55,9 +55,26 @@ jobs:
       - uses: docker/build-push-action@v5
         with:
           context: .
+          file: Dockerfile.client
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-client.outputs.tags }}
+          labels: ${{ steps.meta-client.outputs.labels }}
+
+      - uses: docker/metadata-action@v5
+        id: meta-server
+        with:
+          images: ${{ env.IMAGE_SERVER }}
+          tags: |
+            type=sha,prefix=
+            type=raw,value=latest
+
+      - uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile.server
+          push: true
+          tags: ${{ steps.meta-server.outputs.tags }}
+          labels: ${{ steps.meta-server.outputs.labels }}
 
   deploy:
     name: Deploy to K8s
@@ -67,15 +84,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy manifests
+      - name: Apply manifests
         run: |
           kubectl apply -f k8s/deployment.yaml
           kubectl apply -f k8s/service.yaml
           kubectl apply -f k8s/ingress.yaml
-          kubectl rollout status deployment/azoulux-portfolio --timeout=120s
 
-      - name: Force image update
+      - name: Update images
         run: |
-          kubectl set image deployment/azoulux-portfolio \
-            portfolio=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-          kubectl rollout restart deployment/azoulux-portfolio
+          kubectl set image deployment/portfolio-client client=${{ env.IMAGE_CLIENT }}:latest
+          kubectl set image deployment/portfolio-server server=${{ env.IMAGE_SERVER }}:latest
+          kubectl rollout restart deployment/portfolio-client
+          kubectl rollout restart deployment/portfolio-server
+          kubectl rollout status deployment/portfolio-client --timeout=120s
+          kubectl rollout status deployment/portfolio-server --timeout=120s

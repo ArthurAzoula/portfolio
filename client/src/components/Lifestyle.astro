@@ -1,10 +1,12 @@
 ---
 import type { LifestyleTranslations, LifestyleItem } from '../i18n/types';
+import StravaStats from './StravaStats';
 
 interface Props {
   t: { lifestyle: LifestyleTranslations };
+  locale?: string;
 }
-const { t } = Astro.props;
+const { t, locale = 'fr' } = Astro.props;
 
 const photos: string[] = [
   '/lifestyle/tennis.jpg',
@@ -14,7 +16,7 @@ const photos: string[] = [
 ];
 ---
 
-<section class="snap-section-auto py-[6rem] md:py-[8rem]">
+<section id="lifestyle" class="snap-section-auto py-[6rem] md:py-[8rem]">
   <div class="max-w-[75rem] mx-auto px-[1.5rem]">
     <div class="mb-[4rem] md:mb-[5rem] text-center" data-animate>
       <p class="text-lime font-bold text-[0.75rem] uppercase tracking-widest mb-[0.75rem]">/ {t.lifestyle.title}</p>
@@ -57,5 +59,9 @@ const photos: string[] = [
       ))}
     </div>
 
+    <!-- Strava Integration -->
+    <div class="mt-[3rem] max-w-[60rem] mx-auto" data-animate>
+      <StravaStats locale={locale} client:load />
+    </div>
   </div>
 </section>

@@ -100,6 +100,9 @@ export interface LifestyleTranslations {
   title: string;
   subtitle: string;
   items: LifestyleItem[];
+  strava?: {
+    title: string;
+  };
 }
 
 export interface Translations {

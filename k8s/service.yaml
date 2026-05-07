@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: azoulux-portfolio
+  name: portfolio-client
   labels:
-    app: azoulux-portfolio
+    app: portfolio-client
 spec:
   type: ClusterIP
   ports:
@@ -11,4 +11,19 @@ spec:
       targetPort: 80
       protocol: TCP
   selector:
-    app: azoulux-portfolio
+    app: portfolio-client
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: portfolio-server
+  labels:
+    app: portfolio-server
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3001
+      targetPort: 3001
+      protocol: TCP
+  selector:
+    app: portfolio-server
