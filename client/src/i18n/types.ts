@@ -11,7 +11,8 @@ export interface HeroTranslations {
   at: string;
   subtitle: string;
   cta: string;
-  downloadCV: string;
+  downloadCVFr: string;
+  downloadCVEn: string;
   availability: string;
   location: string;
   proof: string[];

@@ -11,7 +11,8 @@
     "at": "chez",
     "subtitle": "Curieux de bien faire les choses. J'aime construire des APIs claires et des systèmes faciles à comprendre.",
     "cta": "Voir mon travail",
-    "downloadCV": "Télécharger mon CV",
+    "downloadCVFr": "CV Français",
+    "downloadCVEn": "CV English",
     "availability": "Disponible pour échanger",
     "location": "Lille, France",
     "proof": ["Adeo / Leroy Merlin", "Java & Spring Boot", "Kafka", "Docker / Kubernetes"]

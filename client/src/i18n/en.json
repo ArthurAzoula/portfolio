@@ -11,7 +11,8 @@
     "at": "at",
     "subtitle": "Curious about building things the right way. I like clean APIs and systems that are easy to reason about.",
     "cta": "View my work",
-    "downloadCV": "Download my CV",
+    "downloadCVFr": "CV Français",
+    "downloadCVEn": "CV English",
     "availability": "Open to conversations",
     "location": "Lille, France",
     "proof": ["Adeo / Leroy Merlin", "Java & Spring Boot", "Kafka", "Docker / Kubernetes"]
