@@ -7,9 +7,9 @@
   },
   "hero": {
     "greeting": "Salut, moi c'est",
-    "role": "Développeur Backend",
+    "role": "Apprenti Développeur Backend",
     "at": "chez",
-    "subtitle": "Backend, Kafka, IA appliquée et déploiement propre. Je transforme des sujets complexes en systèmes lisibles.",
+    "subtitle": "Curieux de bien faire les choses. J'aime construire des APIs claires et des systèmes faciles à comprendre.",
     "cta": "Voir mon travail",
     "downloadCV": "Télécharger mon CV",
     "availability": "Disponible pour échanger",
@@ -86,7 +86,7 @@
   },
   "about": {
     "title": "À propos",
-    "description": "Développeur backend chez Adeo, au coeur de sujets OMS, Kafka et optimisation.",
+    "description": "Apprenti développeur backend chez Adeo, au coeur de sujets OMS, Kafka et optimisation.",
     "description2": "Je creuse aussi Spring AI et les architectures agentiques.",
     "interests": ""
   },
@@ -94,9 +94,8 @@
     "title": "Parcours",
     "items": [
       {
-        "period": "Sept. 2024 — Présent",
-        "title": "Développeur Backend",
-        "company": "Adeo (Leroy Merlin)",
+        "period": "Sept. 2024 — Sept. 2026",
+        "title": "Apprenti Développeur Backend",
         "location": "Ronchin",
         "description": "Équipe ATP, Order Management System. Optimisation de code, redesign d'algorithmes, intégration de pipelines Kafka à grande échelle. Exploration de Spring AI et IA agentique."
       },

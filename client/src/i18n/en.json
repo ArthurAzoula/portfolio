@@ -7,9 +7,9 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "role": "Backend Developer",
+    "role": "Backend Apprentice Developer",
     "at": "at",
-    "subtitle": "Backend, Kafka, applied AI and clean delivery. I turn complex topics into readable systems.",
+    "subtitle": "Curious about building things the right way. I like clean APIs and systems that are easy to reason about.",
     "cta": "View my work",
     "downloadCV": "Download my CV",
     "availability": "Open to conversations",
@@ -86,7 +86,7 @@
   },
   "about": {
     "title": "About",
-    "description": "Backend developer at Adeo, working around OMS, Kafka and optimization topics.",
+    "description": "Backend apprentice at Adeo, working around OMS, Kafka and optimization topics.",
     "description2": "Also exploring Spring AI and agentic architectures.",
     "interests": ""
   },
@@ -94,9 +94,8 @@
     "title": "Experience",
     "items": [
       {
-        "period": "Sep. 2024 — Present",
-        "title": "Backend Developer",
-        "company": "Adeo (Leroy Merlin)",
+        "period": "Sep. 2024 — Sep. 2026",
+        "title": "Backend Apprentice Developer",
         "location": "Ronchin",
         "description": "ATP team, Order Management System. Code optimization, algorithm redesign, large-scale Kafka pipeline integration. Exploring Spring AI and agentic AI."
       },
