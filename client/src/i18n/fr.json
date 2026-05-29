@@ -81,7 +81,7 @@
         "number": "04",
         "title": "Livraison production",
         "description": "Docker, Kubernetes et CI/CD sans friction.",
-        "tags": ["Docker", "K8s", "CI/CD"]
+        "tags": ["Docker", "K8s", "Observabilité", "Datadog"]
       }
     ]
   },
@@ -98,7 +98,7 @@
         "period": "Sept. 2024 — Sept. 2026",
         "title": "Apprenti Développeur Backend",
         "location": "Ronchin",
-        "description": "Équipe ATP, Order Management System. Optimisation de code, redesign d'algorithmes, intégration de pipelines Kafka à grande échelle. Exploration de Spring AI et IA agentique."
+        "description": "Équipe ATP, Order Management System. Optimisation de code, redesign d'algorithmes et intégration de pipelines Kafka à grande échelle. Initiation à la culture SRE : supervision, analyse de logs via Datadog et acculturation aux concepts de SLI/SLO. Exploration de Spring AI et IA agentique."
       },
       {
         "period": "Janv. 2024 — Sept. 2024",

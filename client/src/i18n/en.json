@@ -81,7 +81,7 @@
         "number": "04",
         "title": "Production delivery",
         "description": "Docker, Kubernetes and CI/CD without friction.",
-        "tags": ["Docker", "K8s", "CI/CD"]
+        "tags": ["Docker", "K8s", "Observability", "Datadog"]
       }
     ]
   },
@@ -98,8 +98,7 @@
         "period": "Sep. 2024 — Sep. 2026",
         "title": "Backend Apprentice Developer",
         "location": "Ronchin",
-        "description": "ATP team, Order Management System. Code optimization, algorithm redesign, large-scale Kafka pipeline integration. Exploring Spring AI and agentic AI."
-      },
+        "description": "ATP team, Order Management System. Code optimization, algorithm redesign, and large-scale Kafka pipeline integration. Introduction to SRE practices: monitoring, log analysis via Datadog, and familiarization with SLI/SLO concepts. Exploring Spring AI and agentic AI."      },
       {
         "period": "Jan. 2024 — Sep. 2024",
         "title": "Full Stack Developer",
