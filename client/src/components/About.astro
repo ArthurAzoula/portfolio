@@ -54,8 +54,15 @@ const { t } = Astro.props;
               <article class="timeline-row">
                 <span class="timeline-period">{item.period}</span>
                 <div>
-                  <h4>{item.title}</h4>
-                  <p>{item.company} · {item.location}</p>
+                  <h4 class="flex items-center gap-[0.5rem] flex-wrap">
+                    {item.title}
+                    {item.type && (
+                      <span class="inline-flex items-center px-[0.5rem] py-[0.125rem] rounded-full text-[0.6rem] font-bold uppercase tracking-wider bg-sand/60 border border-brown/10 text-brown-light">
+                        {item.type}
+                      </span>
+                    )}
+                  </h4>
+                  <p>{item.company ? `${item.company} · ${item.location}` : item.location}</p>
                 </div>
               </article>
             ))}

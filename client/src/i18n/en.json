@@ -92,8 +92,8 @@
   },
   "about": {
     "title": "About",
-    "description": "Backend apprentice at Adeo, I design APIs and Kafka pipelines at the heart of a large-scale OMS. My Master's in AI & Data Engineering is a deliberate choice: understanding data flows and AI models makes me a sharper backend engineer — building more robust APIs and systems that genuinely scale.",
-    "description2": "I'm looking for a Backend Java permanent role from October 2026, in Lille or Full-Remote.",
+    "description": "Backend Developer at Adeo, building APIs and Kafka pipelines at the core of a large-scale OMS. My Master's in AI & Data Engineering is a backend asset: understanding data flows helps me ship more robust and scalable systems.",
+    "description2": "Looking for a Backend Java permanent role from October 2026 — Lille or Full-Remote.",
     "interests": ""
   },
   "experience": {
@@ -101,14 +101,18 @@
     "items": [
       {
         "period": "Sep. 2024 — Sep. 2026",
-        "title": "Backend Apprentice Developer",
+        "title": "Backend Developer",
+        "company": "Adeo",
         "location": "Ronchin",
-        "description": "ATP team, Order Management System. Code optimization, algorithm redesign, and large-scale Kafka pipeline integration. Introduction to SRE practices: monitoring, log analysis via Datadog, and familiarization with SLI/SLO concepts. Exploring Spring AI and agentic AI."      },
+        "type": "Apprenticeship",
+        "description": "ATP team, Order Management System. Code optimization, algorithm redesign, and large-scale Kafka pipeline integration. Introduction to SRE practices: monitoring, log analysis via Datadog, and familiarization with SLI/SLO concepts. Exploring Spring AI and agentic AI."
+      },
       {
         "period": "Jan. 2024 — Sep. 2024",
         "title": "Full Stack Developer",
         "company": "Faceel-it",
         "location": "Wasquehal",
+        "type": "Apprenticeship",
         "description": "SaaS platform for mentorship, training and client tracking. Developed mission tracking features and company intranet."
       },
       {
@@ -116,6 +120,7 @@
         "title": "Full Stack Developer",
         "company": "RadioKing",
         "location": "Croix",
+        "type": "Internship",
         "description": "Designed and maintained full-stack PHP applications. Improved code quality and technical documentation."
       },
       {
@@ -123,6 +128,7 @@
         "title": "Full Stack Developer",
         "company": "CPAM du Val-de-Marne",
         "location": "Créteil",
+        "type": "Internship",
         "description": "Built a business application for data integration, creating a regionalized employer data map."
       }
     ],

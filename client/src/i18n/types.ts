@@ -62,9 +62,10 @@ export interface AboutTranslations {
 export interface ExperienceItem {
   period: string;
   title: string;
-  company: string;
+  company?: string;
   location: string;
   description: string;
+  type?: string;
 }
 
 export interface EducationItem {
