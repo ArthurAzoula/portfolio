@@ -7,13 +7,14 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "role": "Backend Apprentice Developer",
+    "role": "Backend Developer Java · Kafka",
     "at": "at",
-    "subtitle": "Curious about building things the right way. I like clean APIs and systems that are easy to reason about.",
+    "subtitle": "Available for a permanent role from October 2026 — Lille or Full-Remote.",
     "cta": "View my work",
+    "downloadCV": "Download my CV",
     "downloadCVFr": "CV Français",
     "downloadCVEn": "CV English",
-    "availability": "Open to conversations",
+    "availability": "Available · CDI Oct. 2026",
     "location": "Lille, France",
     "proof": ["Adeo / Leroy Merlin", "Java & Spring Boot", "Kafka", "Docker / Kubernetes"]
   },
@@ -28,6 +29,7 @@
       {
         "id": "travel-order",
         "title": "Travel Order Resolver",
+        "label": "School Project",
         "description": "Voice command turned into a usable business intent.",
         "tags": ["Java 21", "Spring Boot", "AI", "Hexagonal"],
         "link": "https://github.com/ArthurAzoula/travel-order-resolver"
@@ -35,6 +37,7 @@
       {
         "id": "cryptoviz",
         "title": "CryptoViz",
+        "label": "School Project",
         "description": "Real-time ingestion, NLP and event-driven dashboard.",
         "tags": ["Java", "Kafka", "React", "NLP"],
         "link": "https://github.com/ArthurAzoula/crypto-news-analysis"
@@ -42,6 +45,7 @@
       {
         "id": "trinity-api",
         "title": "Trinity API",
+        "label": "School Project",
         "description": "Typed, tested and documented REST API.",
         "tags": ["Node.js", "TypeScript", "PostgreSQL", "CI/CD"],
         "link": "https://github.com/ArthurAzoula/trinity-api"
@@ -49,6 +53,7 @@
       {
         "id": "trinity-scanner",
         "title": "Trinity Scanner Mobile",
+        "label": "School Project",
         "description": "Product scan, cart and mobile payment flow.",
         "tags": ["React Native", "TypeScript", "UX", "Payments"],
         "link": "https://github.com/ArthurAzoula/trinity-scanner-mobile"
@@ -87,8 +92,8 @@
   },
   "about": {
     "title": "About",
-    "description": "Backend apprentice at Adeo, working around OMS, Kafka and optimization topics.",
-    "description2": "Also exploring Spring AI and agentic architectures.",
+    "description": "Backend apprentice at Adeo, I design APIs and Kafka pipelines at the heart of a large-scale OMS. My Master's in AI & Data Engineering is a deliberate choice: understanding data flows and AI models makes me a sharper backend engineer — building more robust APIs and systems that genuinely scale.",
+    "description2": "I'm looking for a Backend Java permanent role from October 2026, in Lille or Full-Remote.",
     "interests": ""
   },
   "experience": {

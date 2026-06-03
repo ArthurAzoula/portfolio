@@ -11,6 +11,7 @@ export interface HeroTranslations {
   at: string;
   subtitle: string;
   cta: string;
+  downloadCV: string;
   downloadCVFr: string;
   downloadCVEn: string;
   availability: string;
@@ -28,6 +29,7 @@ export interface ProjectItem {
   description: string;
   tags: string[];
   link: string;
+  label?: string;
 }
 
 export interface ProjectsTranslations {
