@@ -49,6 +49,8 @@ metadata:
     app: portfolio-server
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: portfolio-server
