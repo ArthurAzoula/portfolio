@@ -67,6 +67,9 @@ spec:
           envFrom:
             - secretRef:
                 name: strava-credentials
+          volumeMounts:
+            - name: strava-token
+              mountPath: /data
           resources:
             requests:
               memory: "64Mi"
@@ -86,3 +89,18 @@ spec:
               port: 3001
             initialDelaySeconds: 3
             periodSeconds: 10
+      volumes:
+        - name: strava-token
+          persistentVolumeClaim:
+            claimName: strava-token-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: strava-token-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Mi

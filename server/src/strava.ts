@@ -1,4 +1,6 @@
 import { config } from "./config.js";
+import { readFileSync, writeFileSync, mkdirSync } from "fs";
+import { dirname } from "path";
 
 interface StravaTokenResponse {
   access_token: string;
@@ -59,6 +61,31 @@ export interface Activity {
   kudosCount: number;
 }
 
+const TOKEN_FILE = process.env.STRAVA_TOKEN_FILE || "/data/strava_refresh_token";
+
+function loadPersistedRefreshToken(): void {
+  try {
+    const token = readFileSync(TOKEN_FILE, "utf-8").trim();
+    if (token) {
+      config.strava.refreshToken = token;
+      console.log("Loaded persisted Strava refresh token from file");
+    }
+  } catch {
+    // no file yet — use env var
+  }
+}
+
+function persistRefreshToken(token: string): void {
+  try {
+    mkdirSync(dirname(TOKEN_FILE), { recursive: true });
+    writeFileSync(TOKEN_FILE, token, "utf-8");
+  } catch (e) {
+    console.warn("Could not persist Strava refresh token:", e);
+  }
+}
+
+loadPersistedRefreshToken();
+
 let cachedToken: string | null = null;
 let tokenExpiresAt = 0;
 
@@ -86,8 +113,9 @@ async function getAccessToken(): Promise<string> {
   cachedToken = data.access_token;
   tokenExpiresAt = data.expires_at;
 
-  if (data.refresh_token) {
+  if (data.refresh_token && data.refresh_token !== config.strava.refreshToken) {
     config.strava.refreshToken = data.refresh_token;
+    persistRefreshToken(data.refresh_token);
   }
 
   return cachedToken;
